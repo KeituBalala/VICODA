@@ -1,8 +1,11 @@
-body {margin:0;font-family:Arial}
+body {
+  margin:0;
+}
 
 .navbar {
   overflow: hidden;
   background-color: #fff;
+  font-family: Arial;
   position: fixed;
   top: 0;
   width: 100%;
@@ -55,7 +58,7 @@ body {margin:0;font-family:Arial}
   background-color: #fff;
   min-width: 160px;
   position: fixed;
-  top: 7.5%;
+  top: 7%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
