@@ -1,0 +1,81 @@
+@font-face{
+    font-family: khand;
+    src:url(../Fonts/Khand-Regular.ttf)
+  }
+  
+  @font-face{
+    font-family: kalam;
+    src:url(../Fonts/Kalam-Regular.ttf)
+  }
+  
+  @font-face{
+    font-family: srisakdi;
+    src:url(../Fonts/Srisakdi-Regular.ttf)
+  }
+  
+  :root{
+    --first-font: khand;
+    --second-font: kalam;
+    --main-font: Srisakdi; 
+  
+  }
+  
+  h1 {
+      text-align: center;
+      font-family: var(--first-font);
+      font-size: 137.5%;
+      padding-top: 7%;
+      padding-bottom: 5px;
+     }
+  
+     
+  h2 {
+    text-align: center;
+    font-family: var(--first-font);
+    font-size: 121.875%;
+    padding: 3px;
+   }
+  
+  time {
+    text-align: left;
+    padding-top: 5%;
+   }
+     
+     p {
+      text-align: center;
+      font-family: var(--first-font);
+      font-size: 113%;
+      padding-bottom: 5%;
+     }
+     
+     .content {
+      width: 100%;
+      text-align: center;
+      margin: auto;
+     }
+     
+     .pagination {
+       display: inline-block;
+       padding-top: 7.5%;
+       padding-bottom: 5%;
+       text-align: center;
+       padding-left: 31.5%;
+     }
+     
+     .pagination a {
+       color: black;
+       float: left;
+       padding: 8px 16px;
+       text-decoration: none;
+     }
+     
+     .pagination a.activeP {
+       background-color: #733236;
+       color: white;
+       border-radius: 5px;
+     }
+     
+     .pagination a:hover:not(.active) {
+       background-color: #733236;
+       border-radius: 5px;
+     }
