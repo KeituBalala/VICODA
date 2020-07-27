@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg {
+    background-image: url("../Images/LandingPage.jpeg");
+    text-align: center;
+    color: white;
+    padding-top: 10%;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  h1 {
+    font-family: 'Black And White Picture';font-size: 300%;
+  }
+  
+  h3 {
+    font-family: 'Jim Nightshade';font-size: 150%;
+  }
