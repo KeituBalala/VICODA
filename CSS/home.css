@@ -6,8 +6,8 @@ body, html {
   .bg {
     background-image: url("../Images/LandingPage.jpeg");
     text-align: center;
-    color: white;
-    padding-top: 10%;
+    color: #fee4ff;
+    padding-top: 20%;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -15,9 +15,16 @@ body, html {
   }
   
   h1 {
-    font-family: 'Black And White Picture';font-size: 300%;
+    font-family: 'Codystar';
+    font-size: 4.25vw;
   }
   
   h3 {
-    font-family: 'Jim Nightshade';font-size: 150%;
+    font-family: 'Codystar';
+    font-size: 2.25vw;
+  }
+
+  h4 {
+    font-family: 'Codystar';
+    font-size: 1vw;
   }
