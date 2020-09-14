@@ -1,3 +1,19 @@
+@font-face{
+  font-family: khand;
+  src:url(../Fonts/Khand-Regular.ttf)
+}
+
+@font-face{
+  font-family: kalam;
+  src:url(../Fonts/Kalam-Regular.ttf)
+}
+
+
+:root{
+  --main-font: khand;
+  --first-font: kalam;
+}
+
 body, html {
     height: 100%;
     margin: 0;
@@ -13,11 +29,17 @@ body, html {
   h2 {
     text-align: center;
     color: grey;
+    font-family: var(--main-font);
   }
   
   h3 {
     text-align: center;
     color: grey;
+    font-family: var(--main-font);
+  }
+
+  p {
+    font-family: var(--main-font);
   }
   
   .column1 {
