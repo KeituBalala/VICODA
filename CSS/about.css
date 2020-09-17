@@ -38,6 +38,10 @@ body, html {
     font-family: var(--main-font);
   }
 
+  h4, h5 {
+    font-family: var(--main-font);
+  }
+
   p {
     font-family: var(--main-font);
   }
