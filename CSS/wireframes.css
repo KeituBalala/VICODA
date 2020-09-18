@@ -1,0 +1,42 @@
+@font-face{
+    font-family: khand;
+    src:url(../Fonts/Khand-Regular.ttf)
+  }
+  
+  @font-face{
+    font-family: kalam;
+    src:url(../Fonts/Kalam-Regular.ttf)
+  }
+  
+  @font-face{
+    font-family: srisakdi;
+    src:url(../Fonts/Srisakdi-Regular.ttf)
+  }
+  
+  :root{
+    --first-font: khand;
+    --second-font: kalam;
+    --main-font: Srisakdi; 
+  
+  }
+
+  h1 {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    font-family: var(--first-font);
+    font-size: 200%;
+}
+
+h2 {
+    font-family: var(--first-font);
+}
+
+p {
+    text-align: center;
+}
+
+.wireframes {
+    padding-left: 27%;
+    padding-bottom: 3%;
+}
