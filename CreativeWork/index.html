@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" media="print">
     <script type="module" src="../JavaScript/navbar.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="../JavaScript/DeltaGraph.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
     <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,13 +38,10 @@
   </header>
 
   <main>
-    <h1>CORONA VIRUS API DATA VISUALISATION</h1>    
+    <h1 class="glow">CORONA VIRUS API DATA VISUALISATION</h1>    
 
     <section style="max-width:700px; margin:auto;">
-    <p>My goal for the website design is to achieve simplistic sophistication. To not overwhelm users, whilst attaining their attention and 
-      curiosity. I hoped to ensure that navigation is also kept simple and minimal. Currently, the most exciting and eye catching part of 
-      the website is the homepage and the graphs. Most of the creative and technical exploration will be demonstrated in the formation of 
-      the data visualization.</p>
+    <p style="padding-top: 6%">“A sunrise is a wondrous marvel, but in reality the sun never rises. It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, we must turn our eyes toward brighter things.”</p>
     </section>
 
    <h2>Global Coronavirus Progress Portions Graph</h2>
@@ -73,7 +69,40 @@
     </svg>
     </section>
 
-    <svg id="viz" width="1500" height="1000"></svg>
+    <svg id="viz" width="1500" height="630"></svg>
+
+    <script>
+      let vizArea = d3.select("#viz");
+      let xScale = d3.scaleLinear().domain([0, 100]).range([0, 500]);
+   
+      vizArea
+         .append("circle")
+         .attr("cx", xScale(150))
+         .attr("cy", 300)
+         .attr("r", 280)
+         .style("fill", "#310B12");
+      vizArea
+         .append("circle")
+         .attr("cx", xScale(140))
+         .attr("cy", 280)
+         .attr("r", 190.46)
+         .style("fill", "#AEF359");
+      vizArea
+         .append("circle")
+         .attr("cx", xScale(180.2))
+         .attr("cy", 283)
+         .attr("r", 8.76)
+         .style("fill", "#943a49");
+      vizArea
+         .append("circle")
+         .attr("cx", xScale(178.5))
+         .attr("cy", 290)
+         .attr("r", 3.6)
+         .style("opacity", .8)
+         .style("fill", "#0492C2");
+
+         
+     </script>
 
     <section style="max-width:900px; margin:auto; padding-bottom: 3%;">
         <h2>Reflection On Graph</h2>
@@ -81,18 +110,8 @@
         <p>My goal for the website design is to achieve simplistic sophistication. To not overwhelm users, whilst attaining their attention and 
           curiosity. I hoped to ensure that navigation is also kept simple and minimal. Currently, the most exciting and eye catching part of 
           the website is the homepage and the graphs. Most of the creative and technical exploration will be demonstrated in the formation of 
-          the data visualization. My goal for the website design is to achieve simplistic sophistication. To not overwhelm users, whilst attaining their attention and 
-          curiosity. I hoped to ensure that navigation is also kept simple and minimal. Currently, the most exciting and eye catching part of 
-          the website is the homepage and the graphs. Most of the creative and technical exploration will be demonstrated in the formation of 
-          the data visualization</p>
+          the data visualization.</p>
 
-          <p>My goal for the website design is to achieve simplistic sophistication. To not overwhelm users, whilst attaining their attention and 
-            curiosity. I hoped to ensure that navigation is also kept simple and minimal. Currently, the most exciting and eye catching part of 
-            the website is the homepage and the graphs. Most of the creative and technical exploration will be demonstrated in the formation of 
-            the data visualization. My goal for the website design is to achieve simplistic sophistication. To not overwhelm users, whilst attaining their attention and 
-            curiosity. I hoped to ensure that navigation is also kept simple and minimal. Currently, the most exciting and eye catching part of 
-            the website is the homepage and the graphs. Most of the creative and technical exploration will be demonstrated in the formation of 
-            the data visualization</p>
         </section>
 
   </main>
