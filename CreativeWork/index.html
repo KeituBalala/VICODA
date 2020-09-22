@@ -38,15 +38,20 @@
   </header>
 
   <main>
-    <h1 class="glow">CORONA VIRUS API DATA VISUALISATION</h1>    
-
+    <h1 class="glow">CORONA VIRUS API DATA VISUALISATION</h1>
+        
+    <!-- Creative Work Introduction Section -->
     <section style="max-width:700px; margin:auto;">
-    <p style="padding-top: 6%">“A sunrise is a wondrous marvel, but in reality the sun never rises. It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, we must turn our eyes toward brighter things.”</p>
+    <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
+      It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
+      we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
     </section>
 
+    <!-- Graph Heading And Extra Detail -->
    <h2>Global Coronavirus Progress Portions Graph</h2>
    <h3>Reflecting Data From Saturday 19th September 2020</h3>
 
+   <!-- Graph Keys -->
    <section style="text-align: center;">
     <svg> 
      <rect x="50" y="50" width="10" height="10" fill="#310B12"/>
@@ -69,8 +74,10 @@
     </svg>
     </section>
 
+    <!-- Circular Packing Graph  -->
     <svg id="viz" width="1500" height="630"></svg>
 
+    <!-- D3 Script -->
     <script>
       let vizArea = d3.select("#viz");
       let xScale = d3.scaleLinear().domain([0, 100]).range([0, 500]);
@@ -104,6 +111,7 @@
          
      </script>
 
+    <!-- Graph Reflection Section -->
     <section style="max-width:900px; margin:auto; padding-bottom: 3%;">
         <h2>Reflection On Graph</h2>
 
