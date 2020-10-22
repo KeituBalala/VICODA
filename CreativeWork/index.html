@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Global Corona Virus Progress</title>
-    <meta name= "description" content="This is a list of refernces for images used throughout the blog"/>
+    <title>Choose A Graph</title>
+    <meta name= "description" content="Choose which data Visualisation you wish to see"/>
     <meta name="keywords" content="Data Visualisation, blog, interactive media, Digitial Arts, Student 1771810, interactive media 3, WSOA4174"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" media="print">
     <script type="module" src="../JavaScript/navbar.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/option.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -38,103 +38,13 @@
   </header>
 
   <main>
-    <h1 class="glow">CORONAVIRUS API DATA VISUALISATION (1)</h1>
-        
-    <!-- Creative Work Introduction Section -->
-    <section style="max-width:700px; margin:auto;">
-    <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
-      It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
-      we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
-    </section>
+    <h1 class="glow">Choose A Graph</h1>
 
-    <!-- Graph Heading And Extra Detail -->
-   <h2>Global Coronavirus Confirmed Cases Data Hierarchy </h2>
-   <h3>Reflecting Data From Saturday 19th September 2020</h3>
-
-   <!-- Graph Keys -->
-   <section style="text-align: center;">
-    <svg> 
-     <rect x="50" y="50" width="10" height="10" fill="#310B12"/>
-     <text x="70" y="60" font-size="" fill="Black"> Total Confirmed: 30 401 165 </text>
-    </svg>
-    <svg> 
-     <rect x="50" y="50" width="10" height="10" fill="#AEF359"/>
-     <text x="70" y="60" font-size="" fill="Black"> Total Recovered: 20 679 743 </text>
-    </svg>
-    <svg> 
-     <rect x="50" y="50" width="10" height="10" fill="#943a49"/>
-     <text x="70" y="60" font-size="" fill="Black"> Total Deaths: 950 459 </text>
-    </svg>
-    <svg> 
-     <rect x="50" y="50" width="10" height="10" fill="#0492C2"/>
-     <text x="70" y="60" font-size="" fill="Black"> New Reportings In Categories:</text>
-     <text x="80" y="75" font-size="" fill="Black"> Confirmed: 230 775</text>
-     <text x="80" y="90" font-size="" fill="Black"> Deaths: 4 458</text>
-     <text x="80" y="105" font-size="" fill="Black"> Recovered: 155 519</text>
-    </svg>
-    </section>
-
-    <!-- Circular Packing Graph  -->
-    <svg id="viz" width="1500" height="630"></svg>
-
-    <!-- D3 Script -->
-    <script>
-      let vizArea = d3.select("#viz");
-      let xScale = d3.scaleLinear().domain([0, 100]).range([0, 500]);
-   
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(150))
-         .attr("cy", 300)
-         .attr("r", 280)
-         .style("fill", "#310B12");
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(140))
-         .attr("cy", 280)
-         .attr("r", 190.46)
-         .style("fill", "#AEF359");
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(180.2))
-         .attr("cy", 283)
-         .attr("r", 8.76)
-         .style("fill", "#943a49");
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(178.5))
-         .attr("cy", 290)
-         .attr("r", 3.6)
-         .style("opacity", .8)
-         .style("fill", "#0492C2");
-
-         
-     </script>
-
-    <!-- Graph Reflection Section -->
-    <section style="max-width:900px; margin:auto; padding-bottom: 3%;">
-        <h2>Reflection On Graph</h2>
-
-        <p>My chosen graph is the circular packing graph. The circular packing diagram 
-          demonstrates the visualisation of a hierarchic organisation. In my diagram, I aimed to demonstrate the hierarchy of coronavirus 
-          cases confirmed, and the subcategories of those confirmed how many recovered and how many resulted in deaths. 
-          I utilized the area of the circle to represent the number and portion of categories. The subcategories were calculated in 
-          proportion to the total confirmed cases.</p>
-
-        <p>My data visualisation I aimed to elicit hope in my audience. I found that there is so much circulation of bad news and issues, 
-          that have caused anxiety. I do not wish to overlook the lives of those we have lost, but aim to encourage people to recognize 
-          that being infected by the virus is not an immediate death sentence and that there is hope in all the bad, there is an opportunity 
-          for survival.</p>
-
-        <p>The disadvantage of the circular packing diagram is that it is difficult for the human eye to translate area size into exact 
-          numbers accurately. As a result, I have included keys that reflect the exact numbers. The keys are meant to represent a form of 
-          Annotation, so as to assist the audience in better interpreting the graph.</p>
-
-        <p>I hoped to increase interactivity in the diagram, however, was limited because of the time frame and my level of technical 
-          competency, at the time of submission. In the future, I aim to create a more intricate diagram, that better reflects data and 
-          communicates the information adequately to the user.</p>
+    <section class="options">
+        <button class="button"><strong>Circular Packing Graph</strong></button>
+        <button class="button"><strong>Heatmap</strong></button>
+        <button class="button"><strong>Coming Soon</strong></button>
         </section>
-
   </main>
 </body>
 </html>
