@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Corona Virus Graph</title>
-    <meta name= "description" content="This is a list of refernces for images used throughout the blog"/>
+    <title>Corona Virus Heatmap</title>
+    <meta name= "description" content="This is a heatmap that compares coronavirus data from a set of countries including South Africa."/>
     <meta name="keywords" content="Data Visualisation, blog, interactive media, Digitial Arts, Student 1771810, interactive media 3, WSOA4174"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" media="print">
@@ -38,19 +38,30 @@
   </header>
 
   <main>
-    <h1 class="glow">Attemp at graph</h1>
+    <h1 class="glow">CORONAVIRUS API DATA VISUALISATION (2)</h1>
+
+    <!-- Introduction Section -->
+    <section style="max-width:700px; margin:auto;">
+      <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
+        It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
+        we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
+    </section>
+  
+    <!-- Graph Heading And Extra Detail -->
+    <h2>Coronavirus Data Heatmap</h2>
+    <h3>Reflecting Data From Wednesday 21st October 2020</h3>
 
     <!-- Graph  -->
-    <section id="my_heatmap" style="padding-left: 25%;"></section>
+    <section id="my_heatmap" style="padding-left: 10%;"></section>
 
     <!-- D3 Script -->
     <script>
- // set the dimensions and margins of the graph
-const margin = {top: 80, right: 25, bottom: 30, left: 40},
-  width = 1900 - margin.left - margin.right,
+ // dimensions and margins of graph
+const margin = {top: 80, right: 25, bottom: 30, left: 150},
+  width = 1100 - margin.left - margin.right,
   height = 700 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
+// svg object 
 const svg = d3.select("#my_heatmap")
 .append("svg")
   .attr("width", width + margin.left + margin.right)
@@ -59,7 +70,7 @@ const svg = d3.select("#my_heatmap")
   .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-//Read the data
+// data
 d3.json("/data/users.json", function(error, data) {
 
   // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
@@ -87,67 +98,268 @@ d3.json("/data/users.json", function(error, data) {
     .call(d3.axisLeft(y).tickSize(0))
     .select(".domain").remove()
 
-  // Build color scale
-  const myColor = d3.scaleSequential()
-    .interpolator(d3.interpolateInferno)
-    .domain([1,100])
+      let xScale = d3.scaleLinear().domain([0, 100]).range([0, 500]);
+   
+      svg
+         .append("circle")
+         .attr("cx", xScale(13))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(13))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(13))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(13))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
 
-  // create a tooltip
-  const tooltip = d3.select("#my_heatmap")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
+         svg
+         .append("circle")
+         .attr("cx", xScale(13))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
 
-  // Three function that change the tooltip when user hover / move / leave a cell
-  const mouseover = function(d) {
-    tooltip
-      .style("opacity", 1)
-    d3.select(this)
-      .style("stroke", "black")
-      .style("opacity", 1)
-  }
-  const mousemove = function(d) {
-    tooltip
-      .html("The exact value of<br>this cell is: " + d.value)
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
-  }
-  const mouseleave = function(d) {
-    tooltip
-      .style("opacity", 0)
-    d3.select(this)
-      .style("stroke", "none")
-      .style("opacity", 0.8)
-  }
+         svg
+         .append("circle")
+         .attr("cx", xScale(13))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+      svg
+         .append("circle")
+         .attr("cx", xScale(40))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(40))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#95f39d");
+         svg
+         .append("circle")
+         .attr("cx", xScale(40))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(40))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(40))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+         svg
+         .append("circle")
+         .attr("cx", xScale(40))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#2394bb");
+      svg
+         .append("circle")
+         .attr("cx", xScale(66))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(66))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#95f39d");
+         svg
+         .append("circle")
+         .attr("cx", xScale(66))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(66))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(66))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+         svg
+         .append("circle")
+         .attr("cx", xScale(66))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#2394bb");
+      svg
+         .append("circle")
+         .attr("cx", xScale(93))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(93))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#2c4e2f");
+         svg
+         .append("circle")
+         .attr("cx", xScale(93))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(93))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(93))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+         svg
+         .append("circle")
+         .attr("cx", xScale(93))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#043d50");
 
-  // add the squares
-  svg.selectAll()
-    .data(data, function(d) {return d.group+':'+d.variable;})
-    .enter()
-    .append("rect")
-      .attr("x", function(d) { return x(d.group) })
-      .attr("y", function(d) { return y(d.variable) })
-      .attr("rx", 4)
-      .attr("ry", 4)
-      .attr("width", x.bandwidth() )
-      .attr("height", y.bandwidth() )
-      .style("fill", function(d) { return myColor(d.value)} )
-      .style("stroke-width", 4)
-      .style("stroke", "none")
-      .style("opacity", 0.8)
-    .on("mouseover", mouseover)
-    .on("mousemove", mousemove)
-    .on("mouseleave", mouseleave)
+      svg
+         .append("circle")
+         .attr("cx", xScale(120))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(120))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(120))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(120))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(120))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+         svg
+         .append("circle")
+         .attr("cx", xScale(120))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+      svg
+         .append("circle")
+         .attr("cx", xScale(146))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(146))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(146))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(146))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(146))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+         svg
+         .append("circle")
+         .attr("cx", xScale(146))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#043d50");
+      svg
+         .append("circle")
+         .attr("cx", xScale(172))
+         .attr("cy", 50)
+         .attr("r", 45)
+         .style("fill", "#ccedcf");
+         svg
+         .append("circle")
+         .attr("cx", xScale(172))
+         .attr("cy", 150)
+         .attr("r", 45)
+         .style("fill", "#192d1b");
+         svg
+         .append("circle")
+         .attr("cx", xScale(172))
+         .attr("cy", 250)
+         .attr("r", 45)
+         .style("fill", "#d9a6a3");
+         svg
+         .append("circle")
+         .attr("cx", xScale(172))
+         .attr("cy", 350)
+         .attr("r", 45)
+         .style("fill", "#9b4d49");
+         svg
+         .append("circle")
+         .attr("cx", xScale(172))
+         .attr("cy", 445)
+         .attr("r", 45)
+         .style("fill", "#d3f2fc");
+         svg
+         .append("circle")
+         .attr("cx", xScale(172))
+         .attr("cy", 540)
+         .attr("r", 45)
+         .style("fill", "#043d50");
 })
 
-// Add subtitle to graph
+// subtitle
 svg.append("text")
-        .attr("x", 150)
+        .attr("x", 290)
         .attr("y", -20)
         .attr("text-anchor", "left")
         .style("font-size", "14px")
@@ -155,7 +367,7 @@ svg.append("text")
         .style("max-width", 400)
         .text("A short description of the take-away message of this chart.");
        
-     </script>
+    </script>
 
     <!-- Graph Reflection Section -->
     <section style="max-width:900px; margin:auto; padding-bottom: 3%;">
