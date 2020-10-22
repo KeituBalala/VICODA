@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Corona Virus Heatmap</title>
-    <meta name= "description" content="This is a heatmap that compares coronavirus data from a set of countries including South Africa."/>
+    <title>Global Corona Virus Progress</title>
+    <meta name= "description" content="This is a list of refernces for images used throughout the blog"/>
     <meta name="keywords" content="Data Visualisation, blog, interactive media, Digitial Arts, Student 1771810, interactive media 3, WSOA4174"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" media="print">
     <script type="module" src="../JavaScript/navbar.js"></script>
-    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
     <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,336 +38,78 @@
   </header>
 
   <main>
-    <h1 class="glow">CORONAVIRUS API DATA VISUALISATION (2)</h1>
-
-    <!-- Introduction Section -->
+    <h1 class="glow">CORONAVIRUS API DATA VISUALISATION (1)</h1>
+        
+    <!-- Creative Work Introduction Section -->
     <section style="max-width:700px; margin:auto;">
-      <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
-        It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
-        we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
+    <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
+      It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
+      we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
     </section>
-  
-    <!-- Graph Heading And Extra Detail -->
-    <h2>Coronavirus Data Heatmap</h2>
-    <h3>Reflecting Data From Wednesday 21st October 2020</h3>
 
-    <!-- Graph  -->
-    <section id="my_heatmap" style="padding-left: 10%;"></section>
+    <!-- Graph Heading And Extra Detail -->
+   <h2>Global Coronavirus Confirmed Cases Data Hierarchy </h2>
+   <h3>Reflecting Data From Saturday 19th September 2020</h3>
+
+   <!-- Graph Keys -->
+   <section style="text-align: center;">
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#310B12"/>
+     <text x="70" y="60" font-size="" fill="Black"> Total Confirmed: 30 401 165 </text>
+    </svg>
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#AEF359"/>
+     <text x="70" y="60" font-size="" fill="Black"> Total Recovered: 20 679 743 </text>
+    </svg>
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#943a49"/>
+     <text x="70" y="60" font-size="" fill="Black"> Total Deaths: 950 459 </text>
+    </svg>
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#0492C2"/>
+     <text x="70" y="60" font-size="" fill="Black"> New Reportings In Categories:</text>
+     <text x="80" y="75" font-size="" fill="Black"> Confirmed: 230 775</text>
+     <text x="80" y="90" font-size="" fill="Black"> Deaths: 4 458</text>
+     <text x="80" y="105" font-size="" fill="Black"> Recovered: 155 519</text>
+    </svg>
+    </section>
+
+    <!-- Circular Packing Graph  -->
+    <svg id="viz" width="1500" height="630"></svg>
 
     <!-- D3 Script -->
     <script>
- // dimensions and margins of graph
-const margin = {top: 80, right: 25, bottom: 30, left: 150},
-  width = 1100 - margin.left - margin.right,
-  height = 700 - margin.top - margin.bottom;
-
-// svg object 
-const svg = d3.select("#my_heatmap")
-.append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-.append("g")
-  .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
-
-// data
-d3.json("/data/users.json", function(error, data) {
-
-  // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
-  const myGroups = ["China", "Germany", "Italy", "South Africa", "United Arab Emirates", "UK", "US"]
-  const myVars = ["TotalConfirmed", "NewConfirmed", "TotalDeaths", "NewDeaths", "TotalRecovered", "NewRecovered"]
-
-  // Build X scales and axis:
-  const x = d3.scaleBand()
-    .range([ 0, width ])
-    .domain(myGroups)
-    .padding(0.01);
-  svg.append("g")
-    .style("font-size", 15)
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).tickSize(0))
-    .select(".domain").remove()
-
-  // Build Y scales and axis:
-  const y = d3.scaleBand()
-    .range([ height, 0 ])
-    .domain(myVars)
-    .padding(0.05);
-  svg.append("g")
-    .style("font-size", 15)
-    .call(d3.axisLeft(y).tickSize(0))
-    .select(".domain").remove()
-
+      let vizArea = d3.select("#viz");
       let xScale = d3.scaleLinear().domain([0, 100]).range([0, 500]);
    
-      svg
+      vizArea
          .append("circle")
-         .attr("cx", xScale(13))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
+         .attr("cx", xScale(150))
+         .attr("cy", 300)
+         .attr("r", 280)
+         .style("fill", "#310B12");
+      vizArea
          .append("circle")
-         .attr("cx", xScale(13))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
+         .attr("cx", xScale(140))
+         .attr("cy", 280)
+         .attr("r", 190.46)
+         .style("fill", "#AEF359");
+      vizArea
          .append("circle")
-         .attr("cx", xScale(13))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
+         .attr("cx", xScale(180.2))
+         .attr("cy", 283)
+         .attr("r", 8.76)
+         .style("fill", "#943a49");
+      vizArea
          .append("circle")
-         .attr("cx", xScale(13))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
+         .attr("cx", xScale(178.5))
+         .attr("cy", 290)
+         .attr("r", 3.6)
+         .style("opacity", .8)
+         .style("fill", "#0492C2");
 
-         svg
-         .append("circle")
-         .attr("cx", xScale(13))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-
-         svg
-         .append("circle")
-         .attr("cx", xScale(13))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-      svg
-         .append("circle")
-         .attr("cx", xScale(40))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(40))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#95f39d");
-         svg
-         .append("circle")
-         .attr("cx", xScale(40))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(40))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(40))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-         svg
-         .append("circle")
-         .attr("cx", xScale(40))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#2394bb");
-      svg
-         .append("circle")
-         .attr("cx", xScale(66))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(66))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#95f39d");
-         svg
-         .append("circle")
-         .attr("cx", xScale(66))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(66))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(66))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-         svg
-         .append("circle")
-         .attr("cx", xScale(66))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#2394bb");
-      svg
-         .append("circle")
-         .attr("cx", xScale(93))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(93))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#2c4e2f");
-         svg
-         .append("circle")
-         .attr("cx", xScale(93))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(93))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(93))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-         svg
-         .append("circle")
-         .attr("cx", xScale(93))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#043d50");
-
-      svg
-         .append("circle")
-         .attr("cx", xScale(120))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(120))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(120))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(120))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(120))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-         svg
-         .append("circle")
-         .attr("cx", xScale(120))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-      svg
-         .append("circle")
-         .attr("cx", xScale(146))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(146))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(146))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(146))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(146))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-         svg
-         .append("circle")
-         .attr("cx", xScale(146))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#043d50");
-      svg
-         .append("circle")
-         .attr("cx", xScale(172))
-         .attr("cy", 50)
-         .attr("r", 45)
-         .style("fill", "#ccedcf");
-         svg
-         .append("circle")
-         .attr("cx", xScale(172))
-         .attr("cy", 150)
-         .attr("r", 45)
-         .style("fill", "#192d1b");
-         svg
-         .append("circle")
-         .attr("cx", xScale(172))
-         .attr("cy", 250)
-         .attr("r", 45)
-         .style("fill", "#d9a6a3");
-         svg
-         .append("circle")
-         .attr("cx", xScale(172))
-         .attr("cy", 350)
-         .attr("r", 45)
-         .style("fill", "#9b4d49");
-         svg
-         .append("circle")
-         .attr("cx", xScale(172))
-         .attr("cy", 445)
-         .attr("r", 45)
-         .style("fill", "#d3f2fc");
-         svg
-         .append("circle")
-         .attr("cx", xScale(172))
-         .attr("cy", 540)
-         .attr("r", 45)
-         .style("fill", "#043d50");
-})
-
-// subtitle
-svg.append("text")
-        .attr("x", 290)
-        .attr("y", -20)
-        .attr("text-anchor", "left")
-        .style("font-size", "14px")
-        .style("fill", "grey")
-        .style("max-width", 400)
-        .text("A short description of the take-away message of this chart.");
-       
-    </script>
+         
+     </script>
 
     <!-- Graph Reflection Section -->
     <section style="max-width:900px; margin:auto; padding-bottom: 3%;">
