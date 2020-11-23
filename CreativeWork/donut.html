@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Global Corona Virus Donut Chart</title>
+    <meta name= "description" content="This is my CORONAVIRUS API DATA VISUALISATION (3)"/>
+    <meta name="keywords" content="Data Visualisation, blog, interactive media, Digitial Arts, Student 1771810, interactive media 3, WSOA4174"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" media="print">
+    <script type="module" src="../JavaScript/navbar.js"></script>
+    <script type="module" src="../JavaScript/donut.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar" id="myNav" style="background-color: white;">
+      <a href="../References/index.html" >References</a>
+      <a href="../CreativeWork/index.html">Creative Work</a>
+      <a href="../About/index.html">About</a>
+      <article class="dropdown">
+        <button class="dropbtn">Blogs 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <section class="ddc">
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/TheoriesOfRepresentation.html">Reflection: Chapter 1(Theories Of Representation)</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/HistoricDataVisualisation.html">Analysis: Historic Data Visualisation</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/CommunicatingData.html">Reflection: Chapter 9(Communicating Data To An Audience)</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/InformationIsBeautiful.html"> Bonus Analysis: Information Is Beautiful</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/StyleGuide.html"> Website Style Guide</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/WireFrames.html">WireFrames</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/EthicsAndRiskyTechnology.html">Reflection: Ethical Reflection On Risky Technologies</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/HeatmapReflection.html">Critical Reflection: Coronavirus Heatmap</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/DataVisualisationReflection.html">Bonus Analysis: Circular Packing Graph</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/ArtisticDataVisualisation.html">Reflection: Artistic Data Visualisation</a>
+        </section>
+      </article>  
+      <a href="../index.html">Home</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="glow">CORONAVIRUS API DATA VISUALISATION (3)</h1>
+        
+    <!-- Creative Work Introduction Section -->
+    <section style="max-width:700px; margin:auto;">
+    <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
+      It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
+      we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
+    </section>
+
+    <!-- Graph Heading And Extra Detail -->
+   <h2>Global Coronavirus Donut Chart</h2>
+   <h3>Reflecting Data From Saturday 21 November 2020</h3>
+
+   <!-- Graph Keys -->
+   <section style="text-align: center;">
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#310B12"/>
+     <text x="70" y="60" font-size="" fill="Black"> Total Confirmed: 58 134 828 </text>
+    </svg>
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#AEF359"/>
+     <text x="70" y="60" font-size="" fill="Black"> Total Recovered: 37 207 099 </text>
+    </svg>
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#943a49"/>
+     <text x="70" y="60" font-size="" fill="Black"> Total Deaths: 1 380 344 </text>
+    </svg>
+    <svg> 
+     <rect x="50" y="50" width="10" height="10" fill="#0492C2"/>
+     <text x="70" y="60" font-size="" fill="Black"> New Reportings: 578 938 </text>
+    </svg>
+    </section>
+
+    <!-- Circular Packing Graph  -->
+    <article id="myViz" style="padding-left: 30%"></article>
+  </main>
+</body>
+</html>
