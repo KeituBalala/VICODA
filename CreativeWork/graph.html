@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" media="print">
     <script type="module" src="../JavaScript/navbar.js"></script>
+    <script type="module" src="../JavaScript/graph.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
     <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
@@ -80,41 +81,6 @@
 
     <!-- Circular Packing Graph  -->
     <svg id="viz" width="1500" height="630"></svg>
-
-    <!-- D3 Script -->
-    <script>
-      let vizArea = d3.select("#viz");
-      let xScale = d3.scaleLinear().domain([0, 100]).range([0, 500]);
-   
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(150))
-         .attr("cy", 300)
-         .attr("r", 280)
-         .style("fill", "#310B12");
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(140))
-         .attr("cy", 280)
-         .attr("r", 190.46)
-         .style("fill", "#AEF359");
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(180.2))
-         .attr("cy", 283)
-         .attr("r", 8.76)
-         .style("fill", "#943a49");
-      vizArea
-         .append("circle")
-         .attr("cx", xScale(178.5))
-         .attr("cy", 290)
-         .attr("r", 3.6)
-         .style("opacity", .8)
-         .style("fill", "#0492C2");
-
-         
-     </script>
-
   </main>
 </body>
 </html>
