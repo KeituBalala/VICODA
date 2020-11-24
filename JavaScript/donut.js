@@ -1,7 +1,3 @@
-const width = 650
-height = 650
-margin = 40
-
 const radius = Math.min(width, height) / 2 - margin
 
 const svg = d3.select("#myViz")
