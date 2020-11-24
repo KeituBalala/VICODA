@@ -47,9 +47,8 @@
         
     <!-- Creative Work Introduction Section -->
     <section style="max-width:700px; margin:auto;">
-    <p style="padding-top: 6%"><cite>“A sunrise is a wondrous marvel, but in reality the sun never rises. 
-      It is the earth that rotates to face the sun. Life too can be a wondrous marvel, but like the earth, 
-      we must turn our eyes toward brighter things.”</cite> ~ Unkown</cite></p>
+    <p style="padding-top: 6%"><cite>“Hope is important because it can make the present moment less difficult to bear. 
+      If we believe that tomorrow will be better, we can bear a hardship today.”</cite> ~ Thich Nhat Hanh</cite></p>
     </section>
 
     <!-- Graph Heading And Extra Detail -->
@@ -76,52 +75,8 @@
     </svg>
     </section>
 
-    <!-- Circular Packing Graph  -->
+    <!-- Donut Chart  -->
     <article id="myViz" style="padding-left: 30%"></article>
-
-    <script>
-      const width = 650,
-      height = 650,
-      margin = 40
-      
-      const radius = Math.min(width, height) / 2 - margin
-      
-      const svg = d3.select("#myViz")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-      
-      fetch('https://api.covid19api.com/summary')  
-                .then(response => response.json())                               
-                .then(data => {console.log(data) 
-      });
-      
-      const data = { TotalConfirmed: 58134828, NewConfirmed: 578938, TotalRecovered: 37207099, TotalDeaths: 1380344, 
-      }
-      
-      const color = d3.scaleOrdinal()
-      .domain(data)
-      .range(["#310B12", "#0492C2","#AEF359", "#943a49"])
-      
-      const pie = d3.pie()
-      .value(function(d) {return d.value; })
-      const data_ready = pie(d3.entries(data))
-      
-      svg
-      .selectAll('segments')
-      .data(data_ready)
-      .enter()
-      .append('path')
-      .attr('d', d3.arc()
-      .innerRadius(100)         
-      .outerRadius(radius)
-      )
-      .attr('fill', function(d){ return(color(d.data.key)) })
-      .attr("stroke", "black")
-      .style("stroke-width", "2px")
-           </script>
   </main>
 </body>
 </html>
