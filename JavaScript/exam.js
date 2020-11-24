@@ -16,7 +16,7 @@ const svg = d3.select("#myViz")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-const data = {a: 58640945, b: 11728189,}
+const data = {a: 578938, b: 115788,}
 
 const color = d3.scaleOrdinal()
   .domain(data)
@@ -27,7 +27,7 @@ const pie = d3.pie()
 const data_ready = pie(d3.entries(data))
 
 svg
-  .selectAll('whatever')
+  .selectAll('segments')
   .data(data_ready)
   .enter()
   .append('path')
