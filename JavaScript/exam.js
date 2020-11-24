@@ -3,6 +3,10 @@ fetch('https://api.covid19api.com/summary')
               .then(data => {console.log(data) 
 });
 
+const width = 650
+const height = 650
+const margin = 40
+
 const radius = Math.min(width, height) / 2 - margin
 
 const svg = d3.select("#myViz")
