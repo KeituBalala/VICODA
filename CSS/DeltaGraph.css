@@ -19,7 +19,12 @@
     --main-font: Srisakdi; 
   
   }
-  
+ 
+.intro {
+  max-width:700px; 
+  margin:auto;
+}
+
   h1 {
     padding-top: 7%;
     text-align: center;
@@ -45,6 +50,10 @@ p {
    font-family: var(--second-font);
 }
 
+.keys {
+  text-align: center;
+}
+
 .glow {
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -62,3 +71,40 @@ p {
   }
 }
 
+.heatmap {
+  padding-left: 10%;
+}
+
+.donut {
+  padding-left: 28%;
+}
+
+.pie {
+  padding-left: 29%;
+}
+
+.pagination {
+  display: inline-block;
+  padding-top: 7.5%;
+  padding-bottom: 5%;
+  text-align: center;
+  padding-left: 43.5%;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.activeP {
+  background-color: #AEF359;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #AEF359;
+  border-radius: 5px;
+}
