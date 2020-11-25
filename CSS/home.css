@@ -4,14 +4,14 @@ body, html {
   }
   
   .bg {
-    background-image: url("../Images/LandingPage.jpeg");
+    background-image: url("../Images/LandingPage.jpg");
     text-align: center;
     color: #fee4ff;
     padding-top: 20%;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:100% auto;
     background-color: black;
   }
   
