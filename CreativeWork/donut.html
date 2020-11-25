@@ -10,6 +10,7 @@
     <script type="module" src="../JavaScript/donut.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/donut.css">
     <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -18,7 +19,7 @@
   <header>
     <nav class="navbar" id="myNav" style="background-color: white;">
       <a href="../References/index.html" >References</a>
-      <a href="../CreativeWork/index.html">Creative Work</a>
+      <a href="../CreativeWork/index.html" class="active">Creative Work</a>
       <a href="../About/index.html">About</a>
       <article class="dropdown">
         <button class="dropbtn">Blogs 
@@ -34,7 +35,7 @@
           <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/EthicsAndRiskyTechnology.html">Reflection: Ethical Reflection On Risky Technologies</a>
           <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/HeatmapReflection.html">Critical Reflection: Coronavirus Heatmap</a>
           <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/DataVisualisationReflection.html">Bonus Analysis: Circular Packing Graph</a>
-          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/ArtisticDataVisualisation.html">Reflection: Artistic Data Visualisation</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/ExamReflection.html">Reflection: Exam Data Visualisation</a>
         </section>
       </article>  
       <a href="../index.html">Home</a>
@@ -46,7 +47,7 @@
     <h1 class="glow">A Wonted Marvel Data Visualisation</h1>
         
     <!-- Creative Work Introduction Section -->
-    <section style="max-width:700px; margin:auto;">
+    <section class="intro">
     <p style="padding-top: 6%"><cite>“Hope is important because it can make the present moment less difficult to bear. 
       If we believe that tomorrow will be better, we can bear a hardship today.”</cite> ~ Thich Nhat Hanh</cite></p>
     </section>
@@ -56,7 +57,7 @@
    <h3>Reflecting Data From Saturday 21 November 2020</h3>
 
    <!-- Graph Keys -->
-   <section style="text-align: center;">
+   <section class="keys">
     <svg> 
      <rect x="50" y="50" width="10" height="10" fill="#310B12"/>
      <text x="70" y="60" font-size="" fill="Black"> Total Confirmed: 58 134 828 </text>
@@ -76,7 +77,30 @@
     </section>
 
     <!-- Donut Chart  -->
-    <article id="myViz" style="padding-left: 30%"></article>
+    <article id="myViz" class="donut"></article>
+
+    <article>
+      <h2 style="color: orange;">Where To Next?</h2>
+      <h3>Are you planning on going somewhere under Lockdown Level One restrictions?</h3>
+      <h3>Despite the continuous increase in recoveries, it's important that we practice the relevant safety precautions to avoid further infections.</h3>
+      <h3>Choose from the options below to find out how to protect yourself and others while enjoying a bit of freedom.</h3>
+        <section class="options">
+          <button class="button" onclick="window.location.href='graph.html'"><strong>Shopping Centre</strong></button>
+          <button class="button" onclick="window.location.href='heatmap.html'"><strong>Restuarant</strong></button>
+          <button class="button" onclick="window.location.href='donut.html'"><strong>School</strong></button>
+          <button class="button" onclick="window.location.href='examvid.html'"><strong>Church</strong></button>
+          </section>
+    </article>
+
+    <!-- Pagination -->
+    <section class="pagination">
+      <a href="heatmap.html">&laquo;</a>
+      <a href="graph.html">1</a>
+      <a href="heatmap.html">2</a>
+      <a href="donut.html" class="activeP">3</a>
+      <a href="exam.html">4</a>
+      <a href="exam.html">&raquo;</a>
+  </section>
   </main>
 </body>
 </html>
