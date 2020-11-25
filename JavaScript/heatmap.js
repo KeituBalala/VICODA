@@ -301,7 +301,7 @@ d3.json("/data/users.json", function(error, data) {
 
 // subtitle
 svg.append("text")
-       .attr("x", 290)
+       .attr("x", 105)
        .attr("y", -20)
        .attr("text-anchor", "left")
        .style("font-size", "14px")
