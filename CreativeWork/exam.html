@@ -11,6 +11,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
     <link rel="stylesheet" type="text/css" href="../CSS/DeltaGraph.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/exam.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -18,7 +19,7 @@
   <header>
     <nav class="navbar" id="myNav" style="background-color: white;">
       <a href="../References/index.html" >References</a>
-      <a href="../CreativeWork/index.html">Creative Work</a>
+      <a href="../CreativeWork/index.html" class="active">Creative Work</a>
       <a href="../About/index.html">About</a>
       <article class="dropdown">
         <button class="dropbtn">Blogs 
@@ -34,7 +35,7 @@
           <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/EthicsAndRiskyTechnology.html">Reflection: Ethical Reflection On Risky Technologies</a>
           <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/HeatmapReflection.html">Critical Reflection: Coronavirus Heatmap</a>
           <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/DataVisualisationReflection.html">Bonus Analysis: Circular Packing Graph</a>
-          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/ArtisticDataVisualisation.html">Reflection: Artistic Data Visualisation</a>
+          <a href="https://thelalakei.github.io/WSOA4174A_1771810/Blogs/ExamReflection.html">Reflection: Exam Data Visualisation</a>
         </section>
       </article>  
       <a href="../index.html">Home</a>
@@ -46,7 +47,7 @@
     <h1 class="glow">A Simple But Significant Data Visualisation(Exam)</h1>
         
     <!-- Creative Work Introduction Section -->
-    <section style="max-width:700px; margin:auto;">
+    <section class="intro">
     <p style="padding-top: 6%"><cite>“A single-story cannot possibly address all possible different audiences and their needs. 
       And any well-designed story will be tailored not just to its 
       data and the intended message, but to its audience.”</cite> ~ Riche et al</cite></p>
@@ -57,7 +58,7 @@
    <h3>Reflecting Data From Saturday 21 November 2020</h3>
 
    <!-- Graph Keys -->
-   <section style="text-align: center; width: 1000">
+   <section class="keys">
     <svg> 
      <rect x="50" y="50" width="10" height="10" fill="#310B12"/>
      <text x="70" y="60" font-size="" fill="Black"> New Confirmed: 578 938 </text>
@@ -69,7 +70,28 @@
     </section>
 
     <!-- Pie Chart  -->
-    <article id="myViz" style="padding-left: 29%"></article>
+    <article id="myViz" class="pie"></article>
+
+    <!-- Exam Interactivity  -->
+    <article>
+      <h2 style="color: #AEF359;">Why is this chart important?</h2>
+      <h3>Are you wondering why this pie chart is relevant to you?</h3>
+      <h3>See the content below.</h3>
+        <section class="options">
+          <button class="button" onclick="window.location.href='ASMR Video.mp4'"><strong>Data Viz Video</strong></button>
+          <button class="button" onclick="location.href='https://www.theguardian.com/world/2020/may/17/hospital-patients-england-coronavirus-covid-19';"><strong>Gaurdian Article</strong></button>
+          <button class="button" onclick="location.href='https://www.who.int/westernpacific/emergencies/covid-19/information/covid-19-new-normal';"><strong>WHO Infographics</strong></button>
+          </section>
+    </article>
+
+    <!-- Pagination -->
+    <section class="pagination">
+      <a href="donut.html">&laquo;</a>
+      <a href="graph.html">1</a>
+      <a href="heatmap.html">2</a>
+      <a href="donut.html">3</a>
+      <a href="exam.html" class="activeP">4</a>
+  </section>
   </main>
 </body>
 </html>
