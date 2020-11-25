@@ -50,7 +50,13 @@
      
      .content {
       width: 100%;
+      max-width:600px;
       text-align: center;
+      margin: auto;
+     }
+
+     .references {
+      max-width: 600px; 
       margin: auto;
      }
      
